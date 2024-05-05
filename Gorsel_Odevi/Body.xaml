@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gorsel_Odevi.Body"
+             Title="Body" BackgroundImageSource="unnamed.png" >
+    <Grid RowDefinitions="Auto,*" >
+        <VerticalStackLayout Grid.Row="0" Margin="50">
+            <Label Text="VKI=KG/(BOY*BOY)" HorizontalOptions="Center" TextColor="Navy" FontSize="30" />
+        </VerticalStackLayout>
+        <VerticalStackLayout  Grid.Row="1" HorizontalOptions="Center">
+        
+        <StackLayout>
+            <Label Text="kilonuz (kg):" BackgroundColor="LightPink" HorizontalOptions="Start" Margin="5" WidthRequest="100" HeightRequest="25" FontSize="15" />
+            <Entry x:Name="KiloEntry" BackgroundColor="White" Placeholder="Kilonun girin" WidthRequest="400"  HorizontalOptions="Start"/>
+            <Slider x:Name="KiloSlider" Minimum="0" Maximum="150" Value="70" ValueChanged="KiloSlider_ValueChanged" WidthRequest="400"  HorizontalOptions="Start"/>
+
+            <Label Text="Boyunuz (m):" BackgroundColor="LightBlue" HorizontalOptions="Start" Margin="5" WidthRequest="100" HeightRequest="25" FontSize="15"  />
+            <Entry x:Name="boyEntry" Placeholder="Boyunuz giriniz" BackgroundColor="White"  WidthRequest="400"  HorizontalOptions="Start" />
+            <Slider x:Name="boySlider" Minimum="0" Maximum="3" Value="1.75" ValueChanged="boySlider_ValueChanged" WidthRequest="400"  HorizontalOptions="Start" />
+
+            <Button Text="VKI hesapla" FontSize="Body" Clicked="OnCalculateClicked" />
+            <Label x:Name="bmiLabel" BackgroundColor="LightBlue"  Margin="20"  TextColor="DarkRed" HeightRequest="80" FontSize="28" Text="" />
+        </StackLayout>
+    </VerticalStackLayout>
+    </Grid>
+</ContentPage>

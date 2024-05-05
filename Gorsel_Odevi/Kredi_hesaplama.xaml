@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gorsel_Odevi.Kredi_hesaplam"
+             Title="Kredi_hesaplama" BackgroundImageSource="yeni_arka_plan_resmi.png">
+    <VerticalStackLayout     >
+        <Picker x:Name="myPicker" Title="  Kredi Türü" TitleColor="Red" FontSize="18" SelectedIndexChanged="myPicker_SelectedIndexChanged" BackgroundColor="White" HorizontalOptions="Center"  >
+            <Picker.Items>
+                <x:String>İhtiyaç kredisi</x:String>
+                <x:String>Konut kredisi</x:String>
+                <x:String>Tasit kredisi</x:String>
+                <x:String>Ticari kredisi</x:String>
+
+            </Picker.Items>
+        </Picker>
+        
+
+        <VerticalStackLayout Margin="10">
+
+            <Entry x:Name="kredi_tutari" Grid.Column="1" Grid.Row="1"  Placeholder="Kredi Tutari(TL)" AutomationProperties.HelpText="20" BackgroundColor="WhiteSmoke"  />
+
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Margin="10">
+            <Entry x:Name="faiz_orani"  Grid.Column="1" Grid.Row="2"  Text="{Binding SliderValue, Mode=TwoWay}" Placeholder="Faiz oranı(%)" BackgroundColor="WhiteSmoke"  />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Margin="10">
+            <Entry x:Name="valueLabel" Grid.Column="1" Grid.Row="2"  Text="{Binding SliderValue, Mode=TwoWay}" Placeholder="Vade(ay)" BackgroundColor="WhiteSmoke"  />
+        </VerticalStackLayout>
+        <VerticalStackLayout Margin="10">
+            <Slider Grid.Column="1" Grid.Row="3" Value="{Binding SliderValue}" Minimum="1" Maximum="100" ValueChanged="OnSliderValueChanged" 
+                    MinimumTrackColor="Lime"       
+             MaximumTrackColor="red"/>
+           
+            
+        </VerticalStackLayout>
+        <Label x:Name="AlikTak"  BackgroundColor="LightGrey" HorizontalOptions="Center" Margin="2" FontSize="20" Text="Aylık Taksit: " />
+        <Label  x:Name="ToplamOde"  BackgroundColor="LightGrey" HorizontalOptions="Center" Margin="2" FontSize="20" Text="Toplm ödeme: " />
+        <Label  x:Name="ToplamFa"  BackgroundColor="LightGrey" HorizontalOptions="Center" Margin="2" FontSize="20" Text="Toplam faiz: " />
+
+        <Button Text="Hesapla" Margin="15" VerticalOptions="Center" WidthRequest="100" Clicked="Button_Clicked" BackgroundColor="WhiteSmoke"  TextColor="Blue" FontSize="18" />
+
+
+
+    </VerticalStackLayout>
+    
+
+</ContentPage>
